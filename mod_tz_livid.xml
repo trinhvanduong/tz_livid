@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade">
+    <name>mod_tz_livid</name>
+    <author>DuongTVTemplaza</author>
+    <authorEmail>support@templaza.com</authorEmail>
+    <authorUrl>www.templaza.com</authorUrl>
+    <creationDate>January 04th 2013</creationDate>
+	<copyright>Copyright (C) 2012-2013 TemPlaza. All rights reserved.</copyright>
+	<license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <version>3.0.0</version>
+    <files>
+        <filename module="mod_tz_livid">mod_tz_livid.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="language/en-GB">
+        <language tag="en-GB">en-GB.mod_tz_livid.ini</language>
+        <language tag="en-GB">en-GB.mod_tz_livid.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="category" name="catid"
+                       extension="com_content" multiple="true"
+					default="" size="10"
+					label="JCATEGORY">
+                    <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+                <field name="count" type="text" label="MOD_TZ_LIVID_COUNT"
+                        description="MOD_TZ_LIVID_COUNT_DESC"/>
+                <field name="column_width" type="text" label="MOD_TZ_LIVID_COLUMN_WIDTH"
+                       default="250"
+                       description="MOD_TZ_LIVID_COLUMN_WIDTH_DESC"/>
+                
+                <field name="ordering" type="list"
+					default="c_dsc"
+					label="MOD_TZ_LIVID_FIELD_ORDERING_LABEL"
+					description="MOD_TZ_LIVID_FIELD_ORDERING_DESC">
+					<option
+						value="c_dsc">MOD_TZ_LIVID_VALUE_RECENT_ADDED</option>
+					<option
+						value="m_dsc">MOD_TZ_LIVID_VALUE_RECENT_MODIFIED</option>
+					<option
+						value="p_dsc">MOD_TZ_LIVID_VALUE_RECENT_PUBLISHED</option>
+					<option
+						value="mc_dsc">MOD_TZ_LIVID_VALUE_RECENT_TOUCHED</option>
+				</field>
+                <field type="list" name="thumb_image_size"
+                       default="M"
+                       label="MOD_TZ_LIVID_THUMB_IMAGE_SIZE">
+                    <option value="XS">MOD_TZ_LIVID_XSMALL</option>
+                    <option value="S">MOD_TZ_LIVID_SMALL</option>
+                    <option value="M">MOD_TZ_LIVID_MEDIUM</option>
+                    <option value="L">MOD_TZ_LIVID_LARGE</option>
+                    <option value="XL">MOD_TZ_LIVID_XLARGE</option>
+                </field>
+                <field type="list" name="full_image_size"
+                       default="XL"
+                       label="MOD_TZ_LIVID_FULL_IMAGE_SIZE">
+                    <option value="XS">MOD_TZ_LIVID_XSMALL</option>
+                    <option value="S">MOD_TZ_LIVID_SMALL</option>
+                    <option value="M">MOD_TZ_LIVID_MEDIUM</option>
+                    <option value="L">MOD_TZ_LIVID_LARGE</option>
+                    <option value="XL">MOD_TZ_LIVID_XLARGE</option>
+                </field>
+                <field type="radio" name="remove_item"
+                       default="0" class="btn-group"
+                       label="MOD_TZ_LIVID_REMOVE_ITEM"
+                       description="MOD_TZ_LIVID_REMOVE_ITEM_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="tzarticle" label="MOD_TZ_LIVID_ARTICLE_OPTIONS">
+                <field name="show_title" type="radio" class="btn-group"
+                       default="1"
+                        label="MOD_TZ_LIVID_SHOW_TITLE">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field name="show_category" type="radio" class="btn-group"
+                       default="0"
+                        label="MOD_TZ_LIVID_SHOW_CATEGORY"
+                        description="MOD_TZ_LIVID_SHOW_CATEGORY_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field name="show_create_date" type="radio" class="btn-group"
+                       default="0"
+                        label="MOD_TZ_LIVID_SHOW_CREATE_DATE"
+                        description="MOD_TZ_LIVID_SHOW_CREATE_DATE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field name="show_tags" type="radio" class="btn-group"
+                        default="0" label="MOD_TZ_LIVID_SHOW_TAGS">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field name="tags_order" type="list" label="MOD_TZ_LIVID_TAGS_ORDER">
+                    <option value="">MOD_TZ_LIVID_AUTO</option>
+                    <option value="n_asc">MOD_TZ_LIVID_ASCENDING</option>
+                    <option value="n_desc">MOD_TZ_LIVID_DESCENDING</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="advanced">
+				<field name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
